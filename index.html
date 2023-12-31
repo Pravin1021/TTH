@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>TTH | The Tech Horse</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/assets/img/logo/TTH Logo.png" rel="icon">
+  <link href="/assets/img/logo/TTH Logo.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  ======================================================== -->
+</head>
+<script type="text/javascript">
+  function contactUs() {
+    console.log("uploadddd");
+    document.getElementById("firstName").value;
+    document.getElementById("mailId").value;
+    document.getElementById("mailSub").value;
+    document.getElementById("mailDes").value;
+    console.log(
+      "V1 is ",
+      document.getElementById("firstName").value,
+      document.getElementById("mailId").value,
+      document.getElementById("mailSub").value,
+      document.getElementById("mailDes").value
+    );
+    const xhr = new XMLHttpRequest(); 
+    xhr.open("POST", "http://13.234.88.208:8080/tth/contactUs");
+    xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+    const body = JSON.stringify({ 
+      name: document.getElementById("firstName").value,
+      mail: document.getElementById("mailId").value,
+      subject: document.getElementById("mailSub").value,
+      message: document.getElementById("mailDes").value,
+    });
+    xhr.onload = () => {  
+      if (xhr.readyState == 4 && xhr.status == 201) { 
+        console.log(JSON.parse(xhr.responseText));
+      } else {
+        console.log(`Error: ${xhr.status}`);
+      }   
+    };  
+    xhr.send(body);  
+  }
+
+</script>
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html">
+        
+        <img src="./assets/img/logo/TTH-Main-Logo.png" alt="" height="100px" width="100px">
+        <!-- <span>The Tech Horse</span> -->
+      </a>
+      <!-- navbar Start -->
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+          <li class="nav-link dropdown"><a href="#services"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li>
+                <a href="software-develop.html"> Software Development</a>
+                <a href="app-development.html">Mobile App Development</a>
+                <a href="web-development.html">Web Development</a>
+                <a href="dev-ops.html">Dev OPS</a>
+              </li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="portfolio-all.html">Portfolio</a></li>
+          
+          <li><a class="nav-link scrollto" href="about-us.html">About Us</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Company</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li> -->
+
+          <li><a class="nav-link scrollto" href="contact-us.html">Contact Us</a></li>
+          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- navbar end -->
+    </div>
+  </header>
+  <!-- End Header -->
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center" style="background-color: #272727;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">We offer modern solutions for growing your business</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">A Professional Solution for Business Owners: Unlock the Power of Technology with Our Comprehensive Solutions. Revolutionize Your Business with Our Technology Solutions and Expertise.</h2>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start">
+              <a href="#services" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <span>Get Service</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+          <!-- <img src="assets/img/hero-img.png" class="img-fluid" alt=""> -->
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- End Hero -->
+
+
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about" style="background-color: #272727;">
+
+      <div class="container" data-aos="fade-up">
+        <div class="row gx-0">
+
+          <div class="col-lg-6 d-flex flex-row justify-content-center " data-aos="fade-up" data-aos-delay="200" >
+            <div class="content">
+              <h3>Who We Are</h3>
+              <h2>The Tech Horse Technologies</h2>
+              <p>
+                Welcome to The Tech Horse Family, where innovation meets expertise! As a leading software consultant company, we are committed to delivering cutting-edge solutions that empower businesses to thrive in the digital landscape. <strong>Expertise Across Platforms:</strong> We specialize in mobile app development, web development, and software development, offering end-to-end solutions tailored to meet the unique needs of each client. Our team is proficient in the latest technologies and frameworks, ensuring that your projects are not only cutting-edge but also future-proof.
+              </p>
+              <!-- <div class="text-center text-lg-start">
+                <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                  <span>Read More</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div> -->
+            </div>
+          </div>
+
+          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+           <div class="imgg"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+    <!-- End About Section -->
+
+
+     <!-- ======= Clients Section ======= -->
+     <section id="clients" class="clients" style="background-color: #272727;">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Our Clients</h2>
+        </header>
+
+        <div class="clients-slider">
+          <div class="client-flex">
+            <div class="swiper-slide"><img src="assets/img/clients/wish-it-on.svg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/dryo logo website.png" class="img-fluid" alt=""></div>
+            <!-- <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div> -->
+          </div>
+          <!-- <div class="swiper-pagination"></div> -->
+        </div>
+      </div>
+
+    </section>
+    <!-- End Clients Section -->
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services" style="background-color: #272727;">
+          <div class="bg-service-section" style="background-color: #272727;"> 
+          <div class="container" data-aos="fade-up">
+    
+            <header class="section-header">
+              <h2>Explore Our Services Offering</h2>
+            </header>
+    
+            <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+    
+              <div class="col-lg-4 col-md-6" style="height: 365px;">
+                <div class="service-item  position-relative">
+                      <img class="img-fluid" src="./assets/img/explore-us/programming-background-with-person-working-with-codes-computer (1).jpg"/>
+                  <div style="position: absolute;z-index: 1;top: 50px;padding: 20px;">
+                      <h3>Software Development</h3>
+                      <p>Software development services help plan, design, develop, integrate, test, manage and evolve software 
+                      solutions.</p>
+                      <a href="software-develop.html" class="readmore stretched-link">View Service <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                 
+                  
+                </div>
+              </div><!-- End Service Item -->
+    
+              <div class="col-lg-4 col-md-6" style="height: 365px;">
+                <div class="service-item position-relative">
+                  <img class="img-fluid" style="width:-webkit-fill-available" src="./assets/img/explore-us/phone-mobile-application-development-concept-mobile-internet-3d-illustration.jpg" alt="">
+                  <div style="position: absolute;z-index: 1;top: 50px;padding: 20px;">
+                  <h3>Mobile App Development</h3>
+                  <p>We build robust native, hybrid and cross-platform mobile applications and make them stand out with advanced technologies like AR/VR, and more.</p>
+                  <a href="app-development.html" class="readmore stretched-link">View Service <i class="bi bi-arrow-right"></i></a>
+                  </div> 
+                </div>
+              </div><!-- End Service Item -->
+    
+              <div class="col-lg-4 col-md-6" style="height: 365px;">
+                <div class="service-item position-relative">
+                  <img class="img-fluid"  src="./assets/img/explore-us/html-system-website-concept.jpg" alt="">
+                  <div style="position: absolute;z-index: 1;top: 50px;padding: 20px;">
+                    <h3>Web Development</h3>
+                    <p>Web development services help create all types of web-based software and ensure great experience for web
+                      users.</p>
+                    <a href="web-development.html" class="readmore stretched-link">View Service <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div><!-- End Service Item -->
+    
+              <div class="col-lg-4 col-md-6" style="height: 365px;">
+                <div class="service-item position-relative">
+                  <img class="img-fluid" src="./assets/img/explore-us/circular-economy-infinite-businessman-holding-circular-infinity-symbol-strategy-investment.jpg"/>
+                  <div style="position: absolute;z-index: 1;top: 50px;padding: 20px;">
+                    <h3>Dev Ops</h3>
+                    <p>The Tech Horse provides DevOps services to automate end-to-end software delivery and ensure the scalability and security of infrastructures in companies of all sizes.</p>
+                    <a href="dev-ops.html" class="readmore stretched-link">View Service <i class="bi bi-arrow-right"></i></a>
+                  </div>  
+                </div>
+              </div><!-- End Service Item -->
+    
+            </div>
+    
+          </div>
+        </div>
+    </section>
+    <!-- End Services Section -->
+
+
+    <!-- ======= Services Process ======= -->
+    <!-- <section class="services-process-tab" style="background-color: #272727;">
+        <div class="container"> 
+          <div class="services-process-tab-heading">
+
+            <header class="section-header"> 
+              <h2>Get the right Service! The service you are in need of, from us</h2>
+            </header>
+          </div>
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Mobile App Development</button>
+            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Web Development</button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent"> -->
+          <!-- Services-1 -->
+          <!-- <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <p>The Tech Horse develops web, mobile and cloud applications of various complexity to help companies across industries streamline their internal operations and business transactions and digitize customer-oriented services.</p>
+            <div class="assist-service-client">
+              <div class="assist-service-client-bg">
+                <div class="assist-service-client-bg-content">
+                <h3>How to assist service to client Mobile App development</h3>
+                <hr>
+                <img src="/assets/img/services-process/devlop-process-1.jpg" alt="">
+              </div>
+              </div>
+            </div> -->
+            <!-- accordion tables Start-->
+            <!-- <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    1. Analysis
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    Business analysis generally refers to a batch of activities that help elicit, validate, and address business needs, requirements, problems, and solutions to calibrate the final product with the stakeholders’ vision. The input of a business analyst is recurrent and is present at all stages of the mobile app development process. Business analysts step in as mediators between technical departments and clients to bring diverse points of view to a consistent project vision.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    2. UX/UI Design
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    The purpose of an app’s design is to deliver seamless and effortless user experiences with a polished look.
+  
+                    The success of your mobile app will depend on how well users adopt and benefit from its features. The goal for mobile app UI and UX design is to create excellent user experiences, making your app interactive, intuitive, and user-friendly. While polished UI designs will help with early adoption, your app must have intuitive user experiences to keep app users engaged.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    3. Development
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    if the scope of your mobile app development includes technologies such as Augmented Reality (AR) and Artificial Intelligence (AI), you will need to verify that your app development team has the capabilities to design and implement them. Taking such a technological approach will enable your app to provide atypical, rich user experiences. Thus, greatly differentiating your app from those existing in the market and your company from its competitors.s
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    4. Deploy
+                  </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    To release your native mobile app you must submit it to the appropriate app store, Apple App Store for iOS apps and Google Play for Android apps. However, you will need a developer account with Apple App Store and Google Play Store before launching your mobile app.
+  
+                    While packaging your app for app store submission, use a name and bundle identifier that is different from the QA version of your app. This will help you separate QA and production versions of your app. This way you can continue to test future upgrades to your app prior to releasing them.
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- accordion tables End -->
+          <!-- </div> -->
+          <!-- Services-2 -->
+          <!-- <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <p>Web development refers to the functionality of a website, while web design describes the look of a website. Both are equally important skills when it comes to building a website. You can have the best-looking website that is perfectly curated for your brand, but if it doesn’t function properly, it’s not going to be successful.
+            </p>
+            <div class="assist-service-client">
+              <div class="assist-service-client-bg">
+                <div class="assist-service-client-bg-content">
+                <h3>How to assist service to client Web Development</h3>
+                <hr>
+                <img src="/assets/img/services-process/devlop-process-2.jpg" alt="">
+              </div>
+              </div>
+            </div> -->
+            <!-- accordion tables Start-->
+            <!-- <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    1. Analysis
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    The purpose of an app’s design is to deliver seamless and effortless user experiences with a polished look. The success of your mobile app will depend on how well users adopt and benefit from its features. The goal for mobile app UI and UX design is to create excellent user experiences, making your app interactive, intuitive, and user-friendly. While polished UI designs will help with early adoption, your app must have intuitive user experiences to keep app users engaged.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  2. Front-end development
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    The purpose of an app’s design is to deliver seamless and effortless user experiences with a polished look. The success of your mobile app will depend on how well users adopt and benefit from its features. The goal for mobile app UI and UX design is to create excellent user experiences, making your app interactive, intuitive, and user-friendly. While polished UI designs will help with early adoption, your app must have intuitive user experiences to keep app users engaged.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    3. Back-end development
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    Back-end development is what the user doesn’t see with the website. Back-end development is focused more on how the website works, rather than how it looks. This can include user authentication, network and hosting configuration, database interaction, and anything else that goes on behind the scenes of a website.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    4. Launch
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    After you’ve thoroughly checked the website and tested it a few times, now comes the exciting part: actually launching it. To launch your website, you need to upload it to a server. Once it’s uploaded, you’ll want to quickly run one last test just to double check that everything is correct. The website will now be viewable to the public.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    5. Monitoring and updates
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    Even after you successfully launch your website, it’s still crucial to go back and check it from time to time. Mistakes can happen, and it’s important to stay on top of the website to make sure it remains in good shape. You want to fix any problems as quickly as possible and always keep your website up to date.
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- accordion tables End -->
+          <!-- </div>
+  
+        </div>
+        </div>
+    </section> -->
+    <!-- End Services Process -->
+
+
+    <!-- ======= Counts Section ======= -->
+    <!-- <section id="counts" class="counts">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <i class="bi bi-emoji-smile"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Happy Clients</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Projects</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <i class="bi bi-headset" style="color: #15be56;"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Hours Of Support</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <i class="bi bi-people" style="color: #bb0852;"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Hard Workers</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section> -->
+    <!-- End Counts Section -->
+
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features" style="background-color: #272727;">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Our Industries</h2>
+          <p>We build most of the Industries here</p>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <img id="imageLoad" class="img-fluid" style="width: 716px;height: 440px;"/>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 mt-lg-0 d-flex">
+                <div class="top-flex col-lg-12  d-flex justify-content-between" style="background-color: #0f0f0f;height:10vh;padding: 10px;width: 100%;">
+                  <div class="col-lg-6 col-md-6 " ><h2 id="our-header"></h2></div>
+                  <div class="col-lg-6 col-md-6 d-flex justify-content-end">
+                    <i class="bi bi-chevron-left" style="font-size: 20px;cursor: pointer;margin: 5px;" id="backwardBtn"></i>
+                    <i class="bi bi-chevron-right" style="font-size: 20px;cursor: pointer;margin: 5px;" id="forwardBtn"></i>
+                  </div>
+                </div>
+            <!-- <div class="row align-self-center gy-4">
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>healthcare</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Retail</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Finance</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Manufacturing</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>insurance</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Education</h3>
+                </div>
+              </div>
+
+            </div> -->
+          </div>
+
+        </div>
+
+        <!-- Feature Tabs -->
+        <!-- <div class="row feture-tabs" data-aos="fade-up">
+          <div class="col-lg-6">
+            <h3>Cooperation Principles</h3>
+
+
+            <ul class="nav nav-pills mb-3">
+              <li>
+                <a class="nav-link active" data-bs-toggle="pill" href="#tab1">Integrity</a>
+              </li>
+              <li>
+                <a class="nav-link" data-bs-toggle="pill" href="#tab2">Transparency</a>
+              </li>
+              <li>
+                <a class="nav-link" data-bs-toggle="pill" href="#tab3">Minimized risks</a>
+              </li>
+            </ul>
+
+
+            <div class="tab-content">
+
+              <div class="tab-pane fade show active" id="tab1">
+                <p>We offer full-cycle HR software development, from ideation to design and coding to continuous support. You get all-encompassing expert assistance at  every project stage and receive all necessary documentation for your HR system.</p>
+                <div class="d-flex align-items-center mb-2">
+                  <i class="bi bi-check2"></i>
+                  <h4>Incidunt non veritatis illum ea ut nisi</h4>
+                </div>
+                <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
+              </div>
+
+              <div class="tab-pane fade show" id="tab2">
+                <div class="d-flex align-items-center mb-2">
+                  <i class="bi bi-check2"></i>
+                  <p>We devise tailored sets of KPIs to measure the HR software development efficiency and report regularly on the project’s health.</p>
+                </div>
+
+                  <div class="d-flex align-items-center mb-2">
+                  <i class="bi bi-check2"></i>
+                  <p>We devise tailored sets of KPIs to measure the HR software development efficiency and report regularly on the project’s health.</p>
+                  </div>
+              </div>
+
+              <div class="tab-pane fade show" id="tab3">
+                <p>We ensure smooth and predictable development flow via clear task scoping, accurate project planning, and precise resource estimation.</p>
+                <div class="d-flex align-items-center mb-2">
+                  <i class="bi bi-check2"></i>
+                  <h4>The surprise minimization principle</h4>
+                </div>
+                <p>Before starting the project, our consultants conduct a feasibility study to guarantee financial gains from your HR software.</p>
+                <div class="d-flex align-items-center mb-2">
+                  <i class="bi bi-check2"></i>
+                  <h4>Classical approach of maximizing utility</h4>
+                </div>
+                <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <img src="assets/img/features-2.png" class="img-fluid" alt="">
+          </div>
+
+        </div> -->
+        <!-- End Feature Tabs -->
+
+      </div>
+
+    </section>
+    <!-- End Features Section -->
+
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio" style="background-color: #272727;">
+
+          <div class="container">
+            <header class="section-header">
+              <h2>Portfolio</h2>
+              <p>Check our latest work</p>
+            </header>
+    
+            <div class="row">
+              
+                <ul id="portfolio-flters" class="d-flex justify-content-center col-lg-12 col-md-12 col-sm-12">
+                  <li data-filter="*" class="filter-active">All</li>
+                  <li data-filter=".filter-app">App</li>
+                  <li data-filter=".filter-card">Software</li>
+                  <li data-filter=".filter-web">Web</li>
+                </ul>
+            </div>
+    
+            <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+    
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/portfolio/wish-it-on-project-2.png" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>Wish it On</h4>
+                    <p>App (Android & ios)</p>
+                    <div class="portfolio-links">
+                      <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/portfolio/wish-it-on-project-1.png" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>Wish it On Web</h4>
+                    <p>Website</p>
+                    <div class="portfolio-links">
+                      <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/portfolio/dryo logo.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>Dryo Driver App</h4>
+                    <p>App (Android & ios)</p>
+                    <div class="portfolio-links">
+                      <a href="#" title="More Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+    
+          </div>
+    
+    </section>
+    <!-- End Portfolio Section -->
+
+
+    <!-- ======= Technologies and Platforms we work Section ======= -->
+    <!-- <section class="t-content container">
+      <header class="section-header">
+        <h2>Our Technologies and Platforms we work</h2>
+      </header>
+      <div class="t-content-bg">
+        <div class="t-items">
+          <div class="t-item">
+            <h4 class="t-item-title">Programming Language</h4>
+            <div class="t-item-groups">
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src ="./assets/img/t-icon/html.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/Css.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/bootstrap.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/JavaScript.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/Angular.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/React.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/node.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/java-logo.webp" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/python-logo.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/spring-boot.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/php.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/mysql.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/mongodb.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/postgre-sql.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/sql.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/git-logo.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/github.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="t-item">
+            <h4 class="t-item-title">Android</h4>
+            <div class="t-item-groups">
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src ="./assets/img/t-icon/android-studio.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/eclipse.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/unity.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/React.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/firebase.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/ionic.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="t-item">
+            <h4 class="t-item-title">IOS</h4>
+            <div class="t-item-groups">
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src ="./assets/img/t-icon/flutter.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/testflight.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/Swift.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/swift-ui.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/zeplin.png" alt="">
+              </div>
+              <div class="t-item-group">
+                <img class="t-item-group-icon" src="./assets/img/t-icon/x-codecloud.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- End Technologies and Platforms we work Section -->
+
+
+    <!-- ======= Pricing Section ======= -->
+    <!-- <section id="pricing" class="pricing">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Pricing</h2>
+          <p>Check our Pricing</p>
+        </header>
+
+        <div class="row gy-4" data-aos="fade-left">
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="box">
+              <h3 style="color: #07d5c0;">Free Plan</h3>
+              <div class="price"><sup>$</sup>0<span> / mo</span></div>
+              <img src="assets/img/pricing-free.png" class="img-fluid" alt="">
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li class="na">Pharetra massa</li>
+                <li class="na">Massa ultricies mi</li>
+              </ul>
+              <a href="#" class="btn-buy">Buy Now</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="box">
+              <span class="featured">Featured</span>
+              <h3 style="color: #65c600;">Starter Plan</h3>
+              <div class="price"><sup>$</sup>19<span> / mo</span></div>
+              <img src="assets/img/pricing-starter.png" class="img-fluid" alt="">
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li>Pharetra massa</li>
+                <li class="na">Massa ultricies mi</li>
+              </ul>
+              <a href="#" class="btn-buy">Buy Now</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="box">
+              <h3 style="color: #ff901c;">Business Plan</h3>
+              <div class="price"><sup>$</sup>29<span> / mo</span></div>
+              <img src="assets/img/pricing-business.png" class="img-fluid" alt="">
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li>Pharetra massa</li>
+                <li>Massa ultricies mi</li>
+              </ul>
+              <a href="#" class="btn-buy">Buy Now</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="box">
+              <h3 style="color: #ff0071;">Ultimate Plan</h3>
+              <div class="price"><sup>$</sup>49<span> / mo</span></div>
+              <img src="assets/img/pricing-ultimate.png" class="img-fluid" alt="">
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li>Pharetra massa</li>
+                <li>Massa ultricies mi</li>
+              </ul>
+              <a href="#" class="btn-buy">Buy Now</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section> -->
+    <!-- End Pricing Section -->
+
+
+
+    <!-- ======= Values Section (Customer Centric Approach) ======= -->
+    <!-- <section id="values" class="values" style="background-color: #272727;">
+
+          <div class="container" data-aos="fade-up">
+    
+            <header class="section-header">
+              <h2>Customer Centric Approach</h2>
+            </header>
+    
+            <div class="row">
+    
+              <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="box">
+                  <img src="assets/img/home/customer-approach/teamwork-ico-1.png" class="img-fluid" alt="">
+                  <h3>Dedicated Team</h3>
+                  <p>We provide a dedicated team of developers for every Customer of ours. A dedicated team exclusively works on one project.</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+                <div class="box">
+                  <img src="assets/img/home/customer-approach/Out-Sourcing-ico-2.png" class="img-fluid" alt="">
+                  <h3>In housing of project</h3>
+                  <p>Once the project has been assigned to us, we take care of it end to end, right from inception till delivery, at our premises, with our own infrastructure.</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+                <div class="box">
+                  <img src="assets/img/home/customer-approach/ontime-del-ico-3.png" class="img-fluid" alt="">
+                  <h3>On time delivery</h3>
+                  <p>We understand that time is most precious to our Customers. So it is for us. We take deadlines very seriously and make sure that project is delivered without even a bit of a delay.</p>
+                </div>
+              </div>
+
+              <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+                <div class="box">
+                  <img src="assets/img/home/customer-approach/business-ico-4.png" class="img-fluid" alt="">
+                  <h3>Business Idea</h3>
+                  <p>Although we are hardcore techies, with extensive experience of working in different projects pertaining to various domains, we have now become adept in providing ideas to best fit in the technology into our Customers' business needs.</p>
+                </div>
+              </div>
+
+              <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+                <div class="box">
+                  <img src="assets/img/home/customer-approach/security-ico-5.png" class="img-fluid" alt="">
+                  <h3>Security</h3>
+                  <p>Security is perhaps what is of utmost importance for us. We have placed it at the top in the list of our Company values. We follow only the best Security practices for all the Applications we develop.</p>
+                </div>
+              </div>
+
+              <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+                <div class="box">
+                  <img src="assets/img/home/customer-approach/support-ico-6.png" class="img-fluid" alt="">
+                  <h3>Support & Mainatnace</h3>
+                  <p>We do not end our relationship with our Customers, after the project delivery. We continue to provide them the much needed technical support and maintenance to make sure that the Application works perfectly in real time.</p>
+                </div>
+              </div>
+    
+            </div>
+    
+          </div>
+    
+    </section> -->
+    <!-- End Values Section -->
+
+    
+    <!-- ======= Testimonials Section ======= -->
+    <!-- <section id="testimonials" class="testimonials">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Testimonials</h2>
+          <p>What they are saying about us</p>
+        </header>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="200">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                </p>
+                <div class="profile mt-auto">
+                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                  <h3>Saul Goodman</h3>
+                  <h4>Ceo &amp; Founder</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                </p>
+                <div class="profile mt-auto">
+                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                  <h3>Sara Wilsson</h3>
+                  <h4>Designer</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                </p>
+                <div class="profile mt-auto">
+                  <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                  <h3>Jena Karlis</h3>
+                  <h4>Store Owner</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                </p>
+                <div class="profile mt-auto">
+                  <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                  <h3>Matt Brandon</h3>
+                  <h4>Freelancer</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                </p>
+                <div class="profile mt-auto">
+                  <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                  <h3>John Larson</h3>
+                  <h4>Entrepreneur</h4>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section> -->
+    <!-- End Testimonials Section -->
+
+
+    <!-- ======= Team Section ======= -->
+    <!-- <section id="team" class="team">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Team</h2>
+          <p>Our hard working team</p>
+        </header>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Walter White</h4>
+                <span>Chief Executive Officer</span>
+                <p>Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae aut. Ipsum exercitationem iure minima enim corporis et voluptate.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sarah Jhonson</h4>
+                <span>Product Manager</span>
+                <p>Quo esse repellendus quia id. Est eum et accusantium pariatur fugit nihil minima suscipit corporis. Voluptate sed quas reiciendis animi neque sapiente.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>William Anderson</h4>
+                <span>CTO</span>
+                <p>Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates enim aut architecto porro aspernatur molestiae modi.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Amanda Jepson</h4>
+                <span>Accountant</span>
+                <p>Rerum voluptate non adipisci animi distinctio et deserunt amet voluptas. Quia aut aliquid doloremque ut possimus ipsum officia.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section> -->
+    <!-- End Team Section -->
+
+   
+    <!-- ======= Recent Blog Posts Section ======= -->
+    <!-- <section id="recent-blog-posts" class="recent-blog-posts" style="background-color: #272727;">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Blog</h2>
+          <p>Recent posts form our Blog</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-4">
+            <div class="post-box">
+              <div class="post-img"><img src="assets/img/blog/app-development.jpg" class="img-fluid" alt=""></div>
+              <span class="post-date">Tue, September 15</span>
+              <h3 class="post-title">Understanding Mobile App Development Process, Tool</h3>
+              <a href="blog-single.html" class="readmore stretched-link mt-auto"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="post-box">
+              <div class="post-img"><img src="assets/img/blog/software-development.jpg" class="img-fluid" alt=""></div>
+              <span class="post-date">Tue, September 15</span>
+              <h3 class="post-title">Understanding Software Development: Process, Tools</h3>
+              <a href="blog-single.html" class="readmore stretched-link mt-auto"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section> -->
+    <!-- End Recent Blog Posts Section -->
+
+
+    <!-- ======= F.A.Q Section ======= -->
+    <!-- <section id="faq" class="faq">
+
+          <div class="container" data-aos="fade-up">
+    
+            <header class="section-header">
+              <h2>F.A.Q</h2>
+              <p>Frequently Asked Questions</p>
+            </header>
+    
+            <div class="row">
+              <div class="col-lg-6">
+ 
+                <div class="accordion accordion-flush" id="faqlist1">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+                        Non consectetur a erat nam at lectus urna duis?
+                      </button>
+                    </h2>
+                    <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                      <div class="accordion-body">
+                        Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
+                        Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?
+                      </button>
+                    </h2>
+                    <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                      <div class="accordion-body">
+                        Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
+                        Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?
+                      </button>
+                    </h2>
+                    <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                      <div class="accordion-body">
+                        Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                      </div>
+                    </div>
+                  </div>
+    
+                </div>
+              </div>
+    
+              <div class="col-lg-6">
+    
+
+                <div class="accordion accordion-flush" id="faqlist2">
+    
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1">
+                        Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
+                      </button>
+                    </h2>
+                    <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                      <div class="accordion-body">
+                        Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2">
+                        Tempus quam pellentesque nec nam aliquam sem et tortor consequat?
+                      </button>
+                    </h2>
+                    <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                      <div class="accordion-body">
+                        Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-3">
+                        Varius vel pharetra vel turpis nunc eget lorem dolor?
+                      </button>
+                    </h2>
+                    <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                      <div class="accordion-body">
+                        Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
+                      </div>
+                    </div>
+                  </div>
+    
+                </div>
+              </div>
+    
+            </div>
+    
+          </div>
+    
+    </section> -->
+    <!-- End F.A.Q Section -->
+
+    
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact" style="background-color: #272727;">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Contact Us</h2>
+          <p>Let's start with conversation</p>
+        </header>
+
+        <div class="row gy-4"> 
+          <img src="./assets/img/contact-us.jpg" class="col-lg-6" > </img>
+          
+
+          <div class="col-lg-6">
+            <form action="contact.php" method="post" class="php-email-form">
+              <div class="row gy-4">
+
+                <div class="col-md-6"> 
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div> 
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                </div>  
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message">Somthing went wrong! Try again later</div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button class="app-button" onclick="contactUs()">Send Message</button>
+                </div>  
+
+              </div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+    <!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <!-- <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 text-center">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+          </div>
+          <div class="col-lg-6">
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-sm-12"> 
+              <a href="index.html"> 
+                <img src="./assets/img/logo/TTH-Main-Logo.png" class="img-fluid" style="height: 200px;width: 200px;">
+                <!-- <span>The Tech Horse</span> -->
+              </a>
+              <p>We're a software development company that builds products for companies across the world. We've helped them to build better products, improve their business processes, and grow their businesses.</p>
+              <p style="font-weight: bolder;font-size: 18px;">Follow us on</p>
+              <div class="social-links mt-1">
+                <!-- <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> -->
+                <a href="https://www.facebook.com/profile.php?id=61550827268393" class="facebook"><img src="./assets/img/social-media-icons/facebook.png" alt="" style="height: 25px;width: 25px;"></img></a>
+                <a href="https://www.instagram.com/tthtechnologies/" class="instagram"><img src="./assets/img/social-media-icons/instagram.png" alt="" style="height: 25px;width: 25px;"></img></a>
+                <a href="https://www.linkedin.com/company/the-tech-horse/" class="instagram"><img src="./assets/img/social-media-icons/linkedin.png" alt="" style="height: 25px;width: 25px;"></img></a>
+                <!-- <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a> -->
+              </div>
+            </div> 
+          
+          <div class="col-lg-2 col-sm-3" style="margin-top: 5%;">
+            <div class="footer-links">
+              <h4>Useful Links</h4>
+              <ul>
+                <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="portfolio-details.html">Portfolio</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="about-us.html">About us</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="contact-us.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+
+            <!-- <div class="col-lg-2 col-6 footer-links">
+              <h4>Our Services</h4>
+              <ul>
+                <li><i class="bi bi-chevron-right"></i> <a href="#">Software Development</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="#">Mobile App Development</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="#">Dev Ops</a></li>
+              </ul>
+            </div> -->
+            <div class="col-lg-4 col-sm-3" style="margin-top: 5%;">
+              <h4>Contact Us</h4>
+              
+                <!-- <strong>Phone:</strong> + 91 97991 84337<br> -->
+              <h6>Atlanta , USA +1 (916) 2141002</h6>
+              <h6>India , Chennai +91 8925217609</h6>
+                <div><Strong>Email : </Strong> Operations.tth@thetechhorse.com</div>
+              </p>
+  
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="container">
+      <!-- <div class="copyright">
+        &copy; Copyright <strong><span>The Tech Horse</span></strong>. All Rights Reserved
+      </div> -->
+      <div class="credits">
+       <a href="http://thetechhorse.com//">thetechhorse.com</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="jquery.js"></script>
+  <script src="./assets/js/image.js"></script>
+</body>
+</html>
