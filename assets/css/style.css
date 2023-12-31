@@ -1263,11 +1263,11 @@ p{
   position: absolute;
   background-color: #717475;
   top: 35px;
-  width: 25%;
+  width: 74%;
   display: block;
 }
 
-/* @media(min-width:768px){
+@media(min-width:768px){
   .portfolio #portfolio-flters::before{
     content: "";
     height: 1px;
@@ -1275,7 +1275,7 @@ p{
     position: absolute;
     background-color: #717475;
     top: 35px;
-    width: 40%;
+    width: 40% !important;
     display: block;  }
 }
 
@@ -1287,9 +1287,9 @@ p{
     position: absolute;
     background-color: #717475;
     top: 35px;
-    width: 40%;
+    width: 25% !important;
     display: block;  }
-} */
+}
 
 .portfolio #portfolio-flters li {
   cursor: pointer;
